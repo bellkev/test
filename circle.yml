@@ -1,7 +1,9 @@
 machine:
-  java:
-    version: openjdk6
+  node:
+    version: 6.3.0
 
 test:
   override:
-    - echo nope
+    - npm install bufferutil@1.2.1
+    - npm node-gyp install
+    - npm node-gyp rebuild
