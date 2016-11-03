@@ -5,3 +5,4 @@ machine:
 test:
   override:
     - npm install bufferutil@1.2.1
+    - echo none
