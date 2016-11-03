@@ -5,5 +5,3 @@ machine:
 test:
   override:
     - npm install bufferutil@1.2.1
-    - npm node-gyp install
-    - npm node-gyp rebuild
