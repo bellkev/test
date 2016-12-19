@@ -2,8 +2,10 @@ machine:
   node:
     version: 6.3.0
 
+dependencies:
+  pre:
+    - npm config set //registry.npmjs.org/:_authToken=$NPM_TOKEN
+
 test:
   override:
-    - npm install bufferutil@1.2.1
     - echo none
-    - gcc -v; g++ -v
