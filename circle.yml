@@ -1,6 +1,6 @@
-machine:
-  services:
-    - docker
+machine: 
+  python: 
+    version: 2.7.3
 
 test:
   override:
