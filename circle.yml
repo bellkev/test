@@ -3,6 +3,9 @@ machine:
     - sudo curl -L -o /usr/bin/docker https://get.docker.com/builds/Linux/x86_64/docker-1.12.6
     - sudo container=yes docker daemon: { background: true }
 
+dependencies:
+  post:
+    - sudo docker run -it hello-world /bin/bash | cat
 
 test:
   override:
