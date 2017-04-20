@@ -4,4 +4,4 @@ machine:
 
 test:
   override:
-    - if [[ ! -z $CI_PULL_REQUEST ]] ; echo none ; fi ;
+    - if [[ ! -z $CI_PULL_REQUEST ]] ; then echo none ; fi ;
