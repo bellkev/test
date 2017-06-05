@@ -1,6 +1,8 @@
 machine:
     environment:
         ANDROID_HOME: /usr/local/android-sdk-linux
+        ANDROID_NDK_HOME=${ANDROID_NDK}
+        PATH=$PATH:/usr/local/android-sdk/tools:/usr/local/android-sdk/platform-tools
 
 dependencies:
   pre:
