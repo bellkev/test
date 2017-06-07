@@ -1,12 +1,12 @@
 test:
   override:
 
-	if [ "${CIRCLE_NODE_INDEX}" = "0" ]; then
-		npm test
-	fi
+    if [ "${CIRCLE_NODE_INDEX}" = "0" ]; then
+        npm test
+    fi
 
-	if [ "${CIRCLE_NODE_INDEX}" > "0" ]; then
-		echo "goodbye $CIRCLE_NODE_INDEX";
-		parallel: true
-	fi
+    if [ "${CIRCLE_NODE_INDEX}" > "0" ]; then
+        echo "goodbye $CIRCLE_NODE_INDEX";
+        parallel: true
+    fi
 
