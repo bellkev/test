@@ -1,4 +1,4 @@
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 0) echo "hello" ;; 1) echo "goodbye" ;; esac
+    - case $CIRCLE_NODE_INDEX in 0) echo "hello" ;; 1) echo "goodbye" ;; esac:
         parallel: true
