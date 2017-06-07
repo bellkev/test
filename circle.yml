@@ -1,6 +1,6 @@
 test:
   override:
-    - case $CIRCLE_NODE_INDEX in 
-      0) echo "hello" ;; 
-      *) echo "goodbye" ;; esac:
+    - "if [ $CIRCLE_NODE_INDEX = '0' ]; then echo "hello"; fi":
+        parallel: true
+    - "if [ $CIRCLE_NODE_INDEX > '1' ]; then echo "goodbye"; fi":
         parallel: true
