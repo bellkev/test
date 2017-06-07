@@ -4,4 +4,4 @@ test:
         0) echo "hello" ;;
         *) echo "goodbye" ;;
       esac
-      parallel: true
+        parallel: true
