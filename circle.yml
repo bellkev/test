@@ -4,4 +4,7 @@ test:
         parallel: true
     - "if [ $CIRCLE_NODE_INDEX > '1' ]; then echo goodbye; fi":
         parallel: true
+        files:
+          - spec/unit/sample.rb
+          - spec/**/*.rb
 
