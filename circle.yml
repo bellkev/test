@@ -1,10 +1,9 @@
+dependencies:
+  pre:
+    - npm install gulp
+    
+    
 test:
   override:
-    - "if [ $CIRCLE_NODE_INDEX = '0' ]; then echo hello; fi":
-        parallel: true
-    - "if [ $CIRCLE_NODE_INDEX > '1' ]; then echo goodbye; fi":
-        parallel: true
-        files:
-          - spec/unit/sample.rb
-          - spec/**/*.rb
+    - gulp build --dev
 
