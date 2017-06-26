@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test_dev:
+  test:
     docker:
       - image: circleci/ruby:latest
     
@@ -12,7 +12,7 @@ workflows:
   version: 2
   dev_stage_pre-prod:
     jobs:
-      - test_dev:
+      - test:
           filters:
             branches:
-              only: dev
+              only: dev-*
