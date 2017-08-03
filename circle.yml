@@ -1,18 +1,8 @@
 version: 2
 jobs:
-  test:
+  build:
+    working_directory: ~/ci-mdm-vendor
     docker:
-      - image: circleci/ruby:latest
-    
+      - image: java:8
     steps:
-      - run: echo hello
-
-
-workflows:
-  version: 2
-  dev_stage_pre-prod:
-    jobs:
-      - test:
-          filters:
-            branches:
-              only: dev-release
+      - checkout
