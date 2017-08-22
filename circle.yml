@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     working_directory: ~/test
-    docker:
-      - image: java:8
+    machine: true
+    
     steps:
-      - checkout
+      - docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn -d dperson/openvpn-client -v
