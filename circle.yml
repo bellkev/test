@@ -5,4 +5,4 @@ jobs:
     machine: true
     
     steps:
-      - docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn -d dperson/openvpn-client -v
+      - run: docker run -it --cap-add=NET_ADMIN --device /dev/net/tun --name vpn -d dperson/openvpn-client -v
