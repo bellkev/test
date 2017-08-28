@@ -5,8 +5,13 @@ jobs:
     docker:
       - image: circleci/ruby:2.4.1
     steps:
-      - run: echo $PATH
+      - setup_remote_docker
       - checkout
+      - run:
+          name: 
+          command: |
+            docker --version
+
 
 
 
