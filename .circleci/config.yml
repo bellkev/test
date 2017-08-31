@@ -5,6 +5,7 @@ jobs:
     machine: true
     steps:
       - checkout
+      - run: sudo apt-get update
       - run: sudo apt-get install openvpn
       - run: sleep 1000
 
