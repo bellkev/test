@@ -2,15 +2,10 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.4.1
+    machine: true
     steps:
-      - setup_remote_docker
       - checkout
-      - run:
-          name: 
-          command: |
-            docker --version
+      - run: sleep 1000
 
 
 
