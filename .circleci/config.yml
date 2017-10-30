@@ -39,17 +39,7 @@ jobs:
             echo "Nope!"; exit 1
           fi
 
-workflows:
-  version: 2
-
-  btd:
-    jobs:
-      - flow
-      - downstream:
-          requires:
-            - flow
-
-
+÷
 #version: 2
 #jobs:
 #  build:
