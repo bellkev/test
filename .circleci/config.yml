@@ -6,7 +6,7 @@ defaults: &defaults
 
 version: 2
 jobs:
-  flow:
+  build:
     <<: *defaults
     docker:
       - image: buildpack-deps:jessie
