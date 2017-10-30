@@ -1,0 +1,51 @@
+
+
+
+defaults: &defaults
+  working_directory: /tmp
+
+version: 2
+jobs:
+  build:
+    <<: *defaults
+    docker:
+      - image: buildpack-deps:jessie
+    steps:
+      - run: mkdir -p workspace
+      - run: echo "Hello, world!" > workspace/echo-output
+
+      - persist_to_workspace:
+          # Must be an absolute path, or relative path from working_directory
+          root: workspace
+          # Must be relative path from root
+          paths:
+            - echo-output
+
+  downstream:
+    <<: *defaults
+    machine: true
+    steps:      
+      - run: sudo apt-get update
+      - run: sudo apt-get install openvpn
+      - run: sudo cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf /etc/openvpn/
+      - attach_workspace:
+          # Must be absolute path or relative path from working_directory
+          at: /tmp/workspace
+
+      - run: |
+          if [[ `cat /tmp/workspace/echo-output` == "Hello, world!" ]]; then
+            echo "It worked!";
+          else
+            echo "Nope!"; exit 1
+          fi
+
+
+#version: 2
+#jobs:
+#  build:
+#    working_directory: ~/test
+#    machine: true
+#    
+#    steps:
+#      - run: sudo apt-get install openvpn-client
+    
